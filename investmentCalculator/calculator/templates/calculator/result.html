@@ -1,0 +1,35 @@
+{% extends 'calculator/base.html' %}
+
+{% block content %}
+    <a href="{% url 'index' %}">Go Back</a>
+    <div>
+        <div>
+            <h1>Investment Results</h1>
+
+            <h3>
+                You will have ${{ total_result }} in {{ number_of_years }} years at a rate of {{ return_rate }}%.
+            </h3>
+
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Interest</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key, value in yearly_results.items %}
+                        <tr>
+                            <th>{{ key }}</th>
+                            <th>{{ value.interest }}</th>
+                            <th>{{ value.total }}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
