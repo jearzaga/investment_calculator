@@ -1,19 +1,21 @@
 {% extends 'calculator/base.html' %}
 
 {% block content %}
-    <a href="{% url 'index' %}">Go Back</a>
-    <div>
-        <div>
-            <h1>Investment Results</h1>
 
-            <h3>
+    <div class="d-flex justify-content-center">
+        <div>
+            <br>
+            <a href="{% url 'index' %}" class="btn btn-outline-dark btn-rounded">Go Back</a>
+            <h1 class="text-center">Investment Results</h1>
+
+            <h3 class="text-center">
                 You will have ${{ total_result }} in {{ number_of_years }} years at a rate of {{ return_rate }}%.
             </h3>
 
-            <div>
-                <table>
+            <div class="text-center">
+                <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="table-dark">
                             <th>Year</th>
                             <th>Interest</th>
                             <th>Total</th>
