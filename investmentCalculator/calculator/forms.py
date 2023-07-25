@@ -16,4 +16,7 @@ class InvestmentForm(forms.Form):
         ]
 
         for field_name in fields_to_update:
-            self.fields[field_name].widget.attrs.update({'class': 'form-control'})
+            self.fields[field_name].widget.attrs.update({
+                'class': 'form-control',
+                'style': 'color: black;',
+                })
